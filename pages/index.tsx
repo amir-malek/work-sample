@@ -23,7 +23,7 @@ export default function Home({users}: HomeProps) {
 
     return <Grid container item spacing={5} sx={{marginTop: 5, marginBottom: 5}}>
         {users.map(user => {
-            return <Grid item md={4} xs={12}>
+            return <Grid key={user.id} item md={4} xs={12}>
                 <Profile user={user}/>
             </Grid>
         })}
