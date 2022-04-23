@@ -9,7 +9,7 @@ type UserData = {
     createdAt: Date,
     name: string,
     avatar: string,
-    bio: string,index
+    bio: string,
     id: number
 }[]
 
