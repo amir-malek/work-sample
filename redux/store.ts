@@ -1,8 +1,11 @@
 import {Action, configureStore, ThunkAction} from '@reduxjs/toolkit';
 import {createWrapper} from 'next-redux-wrapper';
+import userDialog from "./slices/userDialogSlice";
 
 const store = configureStore({
-    reducer: {},
+    reducer: {
+        userDialog
+    },
 });
 
 export type AppDispatch = typeof store.dispatch;

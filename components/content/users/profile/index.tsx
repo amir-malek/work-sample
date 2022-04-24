@@ -4,6 +4,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {CardActionArea} from '@mui/material';
+import {setUser, setOpen} from '../../../../redux/slices/userDialogSlice';
+import {useAppDispatch} from "../../../../redux/hooks";
 
 interface ProfileProps {
     user: {
@@ -16,8 +18,14 @@ interface ProfileProps {
 }
 
 export default function Profile({user}: ProfileProps) {
+    const dispatch = useAppDispatch()
+
+
     return (
-        <Card sx={{height: '100%'}}>
+        <Card onClick={() => {
+            dispatch(setOpen(true))
+            dispatch(setUser(user))
+        }} sx={{height: '100%'}}>
             <CardActionArea sx={{height: '100%'}}>
                 <CardMedia
                     component="img"
