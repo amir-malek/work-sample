@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Profile from '../components/content/users/profile';
 import type {ReactElement} from "react";
 import Layout from '../components/layout';
@@ -43,7 +44,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     let users: UserData;
 
     try {
-        res = await axios.get(`${process.env.MOCKAPI_BASE_URL}/users`)
+        res = await axios.get(`${process.env.NEXT_PUBLIC_MOCKAPI_BASE_URL}/users`)
         users = res.data
     } catch (e: Error | AxiosError) {
         users = []
