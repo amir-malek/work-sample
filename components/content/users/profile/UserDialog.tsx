@@ -47,6 +47,7 @@ export default function User() {
             name: inputs.name,
             bio: inputs.bio
         });
+        dispatch(setOpen(false))
     }
 
     const handleClose = () => {
